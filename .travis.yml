@@ -5,6 +5,8 @@ before_install:
 cache:
   directories:
     - $HOME/.m2
+  script:
+  - "./travis/build.sh"
 env:
   global:
     - secure: Cihpck6TLSlKLAYBOBAofYw9erkD9V9CNpWdtGFzVbA0ui4U3vmLQV0d5g3IMqz31oZFNzwfMqsRK+YEIDJaMrTPWoXlyKAY0mkk/A/mv22sHcTRgFxpPtHUzhbqa1MfU7H80itKph+bEI7/Mz18IHXNynZpMDg6UvNScJieEH1XTFq2Qq6tawqGRW2u0yBobt5L8D2LkS48eKHPVd2DHKFXp9LCeP7j8bjvahQ2TMUl3KW9FNUvIrxhiudH6iU4XOWASADHYQsm8rTl45NNWFahmv9S7PCSclPu5txpT3zP9+gRQtGM7bo48II2zeCSpN6xvWKkz/r8R4Jip8ZGj9cjzCDwKFQFFQk+S6FxqX10cOmSc0/+8HdNQPUMVXp1dilbakFiboIRNoO93r5d0peNtRBjgFx1ova80S1ZCb5b0l2KwqW+9Q3Ve23j/bzbdvdEqOnFmcu8PkJ5C6s8HgQ9QK5OjUCEHcAtBQOHxIdS33m0o0RCyVwoiXC1Wm6ISAM8GU4Qa4CZQQAkFYCZUagn++9/Tf2DymHZOObyVxfTA5s+/EMXSq+W6X0yJk2Qhha9iOA2l9IGuxKcfzaoUaf5rcAdwbf7pUdjhEOy2iV0qMLZIWlo+xG9gAXDzRyxK8AEbluL78ulQHUp+1Fc0hF9G5zCCEyXs90cXzeaHUk=
