@@ -1,12 +1,13 @@
-language: java
+  language: java
 jdk: openjdk8
-after_success:
-  - mvn coveralls:report
+before_install:
+  - chmod +x build.sh
+  - chmod +x deploy.sh
 cache:
   directories:
     - $HOME/.m2
-script:
-  - "./travis/build.sh"
+  script:
+  - "./build.sh"
 env:
   global:
     - secure: Cihpck6TLSlKLAYBOBAofYw9erkD9V9CNpWdtGFzVbA0ui4U3vmLQV0d5g3IMqz31oZFNzwfMqsRK+YEIDJaMrTPWoXlyKAY0mkk/A/mv22sHcTRgFxpPtHUzhbqa1MfU7H80itKph+bEI7/Mz18IHXNynZpMDg6UvNScJieEH1XTFq2Qq6tawqGRW2u0yBobt5L8D2LkS48eKHPVd2DHKFXp9LCeP7j8bjvahQ2TMUl3KW9FNUvIrxhiudH6iU4XOWASADHYQsm8rTl45NNWFahmv9S7PCSclPu5txpT3zP9+gRQtGM7bo48II2zeCSpN6xvWKkz/r8R4Jip8ZGj9cjzCDwKFQFFQk+S6FxqX10cOmSc0/+8HdNQPUMVXp1dilbakFiboIRNoO93r5d0peNtRBjgFx1ova80S1ZCb5b0l2KwqW+9Q3Ve23j/bzbdvdEqOnFmcu8PkJ5C6s8HgQ9QK5OjUCEHcAtBQOHxIdS33m0o0RCyVwoiXC1Wm6ISAM8GU4Qa4CZQQAkFYCZUagn++9/Tf2DymHZOObyVxfTA5s+/EMXSq+W6X0yJk2Qhha9iOA2l9IGuxKcfzaoUaf5rcAdwbf7pUdjhEOy2iV0qMLZIWlo+xG9gAXDzRyxK8AEbluL78ulQHUp+1Fc0hF9G5zCCEyXs90cXzeaHUk=
@@ -15,6 +16,6 @@ env:
     - secure: LKJ3t84MXkAKgaQebhKV5zGpeHdXwOM9Wksd8++R56ml333A60ktszAruQddwshMZTPFlfBjZ/ZxmJ5gHygeZP4nXbeARbm3Rc2skGkngXwXePF+huobKmB9UwLjS/aIpDpCSMAoADg+tJNNNeVEA3RfxjR/F6rev5GDRg914qfvfRRvMChOe3in1je9R+ohUYNtSN5yRRWgeOLdpEZzWjMVIAWy6wT5SMrGsaEPKs9zZG20qvJaX88s50xTStESuvaOpShilJP9+4I44183ps/ej1lO9xh8tej1G0ILbzk4b0JGjILIga7QeQAi5V4+npW9EzSz7ceM5pyWzfgiNsqjuErf2TObdaJ80/lDl2YuomCOcY0pUc6txaiko1MIiecZY+FfxIoeqQtR6gX89+w+jliYTiFtKDeoxTERU1FVy0m8BX+etbRAILD6EimoFXF3zjfebKz3kAaMrSKoXdhQCQ6HOKe0Lbe1RStXc+X8LUXsz4yWlNPTZOeYf3orW6JBhvCXVxA4G4fX/PU8hmsUa97LyXeRbnBWeH8yZWj+1lOsXDQfLPucMgJWXr5WuZgu0qC2r0xGA20hRKENatxPZEGu7YRZgB33R8jNI7roAM5ziuhq6HWaOe1+t/lNVUd1hEwhUVMTBFrgJcwUY+kdiMrFfzGelwJUz6aSUD0=
 deploy:
   provider: script
-  script: ./travis/deploy.sh
+  script: ./deploy.sh
   on:
     tags: true
